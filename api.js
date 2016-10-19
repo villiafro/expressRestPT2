@@ -52,7 +52,7 @@ module.exports = function(app) {
     newComp.save(function (err) {
         console.log(err);
         if (err) return res.json(500, err);
-        res.json(newComp);
+        res.json(201, newComp);
     });
   });
 };
