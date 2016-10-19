@@ -50,8 +50,8 @@ module.exports = function(app) {
     var newComp = new company(req.body);
     //console.log(newComp);
     newComp.save(function (err) {
+        console.log(err);
         if (err) return res.json(500, err);
-        console.log(newComp);
         res.json(newComp);
     });
     /*var newCompany = {
