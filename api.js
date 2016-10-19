@@ -54,15 +54,7 @@ module.exports = function(app) {
         if (err) return res.json(500, err);
         res.json(newComp);
     });
-    /*var newCompany = {
-      name : req.body.name,
-      punchCount : req.body.punchCount
-    };
-
-    companies.push(newCompany);
-    res.json(true);*/
   });
-
 };
 
 /*app.get('/api/companies', function(req, res) {
