@@ -17,10 +17,11 @@ fs.readdirSync(modelsPath).forEach(function (file) {
 var PORT = 5000;
 var app = express();
 
-require('./api', app);
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.configure(function(){
+	app.use(bodyParser.urlencoded({ extended: true }));
+	app.use(bodyParser.json());
+	require('./api')(app);
+})
 
 app.listen(PORT, function () {
     console.log('Express server listening on localhost:%d', PORT);

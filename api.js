@@ -39,14 +39,14 @@ var punches = [
 
 module.exports = function(app) {
 
-  app.get('/companies', function(req, res) {
+  app.get('/api/companies', function(req, res) {
     company.find().exec(function (err, todo) {
         if (err) return res.json(500, err);
         res.json(todo);
     });
   });
 
-  app.post('/companies', function(req, res) {
+  app.post('/api/companies', function(req, res) {
     console.log(req.body.name);
     var newComp = new company(req.body);
     newComp.save(function (err) {
