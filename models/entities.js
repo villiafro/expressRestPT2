@@ -64,7 +64,7 @@ kronan.save();
 var villi = new user({
   _id : 0,
   name : "Vilhjalmur",
-  token : "villi"
+  token : "villi",
   gender : "m"
 });
 villi.save();
@@ -72,7 +72,7 @@ villi.save();
 var haukur = new user({
   _id : 0,
   name : "Haukur",
-  token : "haukur"
+  token : "haukur",
   gender : "m"
 });
 haukur.save();
@@ -80,7 +80,7 @@ haukur.save();
 var begga = new user({
   _id : 0,
   name : "Berglind",
-  token : "begga"
+  token : "begga",
   gender : "f"
 });
 begga.save();
