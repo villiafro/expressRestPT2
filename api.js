@@ -47,14 +47,20 @@ module.exports = function(app) {
   });
 
   app.post('/api/companies', function(req, res) {
+    if(!req.body.hasOwnProperty('name') || !req.body.hasOwnProperty('punchCount')) {
+      res.statusCode = 412;
+      return res.json('Payload invalid');
+    }
     var newComp = new company(req.body);
     //console.log(newComp);
     newComp.save(function (err) {
         console.log(err);
         if (err) return res.json(500, err);
-        res.json(newComp);
+        res.json(201, newComp);
     });
   });
+
+  
 };
 
 /*app.get('/api/companies', function(req, res) {
