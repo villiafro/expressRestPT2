@@ -38,20 +38,51 @@ var user = mongoose.model('Users', users);
 var company = mongoose.model('Companies', companies);
 var punch = mongoose.model('Punches', punches);
 
-var hagkaup = new company;
-hagkaup._id = 0;
-hagkaup.name = "Hagkaup";
-hagkaup.punchCount = "10";
+//fill db, should be commented out
+
+var hagkaup = new company({
+  _id : 0,
+  name : "Hagkaup",
+  punchCount : 10
+});
 hagkaup.save();
 
-var bonus = new company;
-bonus._id = 1;
-bonus.name = "Bónus";
-bonus.punchCount = "10";
+var bonus = new company({
+  _id : 1,
+  name : "Bónus",
+  punchCount : 10
+});
 bonus.save();
 
-var kronan = new company;
-kronan._id = 2;
-kronan.name = "Krónan";
-kronan.punchCount = "10";
+var kronan = new company({
+  _id : 0,
+  name : "Krónan",
+  punchCount : 10
+});
 kronan.save();
+
+var villi = new user({
+  _id : 0,
+  name : "Vilhjalmur",
+  token : "villi"
+  gender : "m"
+});
+villi.save();
+
+var haukur = new user({
+  _id : 0,
+  name : "Haukur",
+  token : "haukur"
+  gender : "m"
+});
+haukur.save();
+
+var begga = new user({
+  _id : 0,
+  name : "Berglind",
+  token : "begga"
+  gender : "f"
+});
+begga.save();
+
+
