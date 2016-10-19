@@ -55,7 +55,7 @@ var bonus = new company({
 bonus.save();
 
 var kronan = new company({
-  _id : 0,
+  _id : 2,
   name : "Krónan",
   punchCount : 10
 });
@@ -70,7 +70,7 @@ var villi = new user({
 villi.save();
 
 var haukur = new user({
-  _id : 0,
+  _id : 1,
   name : "Haukur",
   token : "haukur",
   gender : "m"
@@ -78,7 +78,7 @@ var haukur = new user({
 haukur.save();
 
 var begga = new user({
-  _id : 0,
+  _id : 2,
   name : "Berglind",
   token : "begga",
   gender : "f"

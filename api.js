@@ -47,21 +47,12 @@ module.exports = function(app) {
   });
 
   app.post('/api/companies', function(req, res) {
-    console.log(req.body.name);
     var newComp = new company(req.body);
     newComp.save(function (err) {
         if (err) return res.json(500, err);
-        res.json(newComp);
+        res.json(true);
     });
-    /*var newCompany = {
-      name : req.body.name,
-      punchCount : req.body.punchCount
-    };
-
-    companies.push(newCompany);
-    res.json(true);*/
   });
-
 };
 
 /*app.get('/api/companies', function(req, res) {
