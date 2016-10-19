@@ -48,9 +48,11 @@ module.exports = function(app) {
 
   app.post('/api/companies', function(req, res) {
     var newComp = new company(req.body);
+    //console.log(newComp);
     newComp.save(function (err) {
         if (err) return res.json(500, err);
-        res.json(true);
+        console.log(newComp);
+        res.json(newComp);
     });
   });
 };
