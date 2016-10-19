@@ -34,6 +34,24 @@ var punches = new Schema({
   	used: { type: Boolean, default: false }
 });
 
-mongoose.model('Users', users);
-mongoose.model('Companies', companies);
-mongoose.model('Punches', punches);
+var user = mongoose.model('Users', users);
+var company = mongoose.model('Companies', companies);
+var punch = mongoose.model('Punches', punches);
+
+var hagkaup = new company;
+hagkaup._id = 0;
+hagkaup.name = "Hagkaup";
+hagkaup.punchCount = "10";
+hagkaup.save();
+
+var bonus = new company;
+bonus._id = 1;
+bonus.name = "Bónus";
+bonus.punchCount = "10";
+bonus.save();
+
+var kronan = new company;
+kronan._id = 2;
+kronan.name = "Krónan";
+kronan.punchCount = "10";
+kronan.save();

@@ -4,9 +4,9 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose');
 
-var users = mongoose.model('Users'),
-    companies = mongoose.model('Companies'),
-    punches = mongoose.model('Punches');
+var user = mongoose.model('Users'),
+    company = mongoose.model('Companies'),
+    punch = mongoose.model('Punches');
 
 var app = express();
 
@@ -31,22 +31,24 @@ var punches = [
   { userID : 2, companyID : 2, date : "2004-02-12T14:59:35.591Z"}
 ];*/
 
-app.use(express.bodyParser());
+//app.use(express.bodyParser());
 //app.use(bodyParser.urlencoded({ extended: true }));
 //app.use(bodyParser.json());
 
 //var todos = require('./controllers/controller');
 
 module.exports = function(app) {
-  app.get('/api/companies', function(req, res) {
-    companies.find().exec(function (err, todo) {
+
+  app.get('/companies', function(req, res) {
+    company.find().exec(function (err, todo) {
         if (err) return res.json(500, err);
         res.json(todo);
     });
   });
 
-  app.post('/api/companies', function(req, res) {
-    var newComp = new companies(req.body);
+  app.post('/companies', function(req, res) {
+    console.log(req.body.name);
+    var newComp = new company(req.body);
     newComp.save(function (err) {
         if (err) return res.json(500, err);
         res.json(newComp);
@@ -59,7 +61,6 @@ module.exports = function(app) {
     companies.push(newCompany);
     res.json(true);*/
   });
-
 
 };
 
